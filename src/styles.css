@@ -1,0 +1,108 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Aster & Co. design system — warm appointment ledger.
+ * Light, paper-toned surfaces with a single terracotta accent.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-display: var(--font-display-family);
+  --font-sans: var(--font-sans-family);
+
+  --color-ink: var(--ink);
+  --color-inksoft: var(--inksoft);
+  --color-paper: var(--paper);
+  --color-line: var(--line);
+  --color-accentsoft: var(--accentsoft);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  --font-display-family: "Fraunces", Georgia, serif;
+  --font-sans-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --ink: oklch(0.25 0.03 160);
+  --inksoft: oklch(0.48 0.03 160);
+  --paper: oklch(0.975 0.012 355);
+  --line: oklch(0.9 0.03 355);
+  --accentsoft: oklch(0.93 0.045 355);
+
+  --background: oklch(0.975 0.012 355);
+  --foreground: oklch(0.25 0.03 160);
+  --card: oklch(0.9944 0.0026 89);
+  --card-foreground: oklch(0.25 0.03 160);
+  --popover: oklch(0.9944 0.0026 89);
+  --popover-foreground: oklch(0.25 0.03 160);
+  --primary: oklch(0.5 0.11 155);
+  --primary-foreground: oklch(0.9944 0.0026 89);
+  --secondary: oklch(0.93 0.045 355);
+  --secondary-foreground: oklch(0.5 0.11 155);
+  --muted: oklch(0.975 0.012 355);
+  --muted-foreground: oklch(0.48 0.03 160);
+  --accent: oklch(0.5 0.11 155);
+  --accent-foreground: oklch(0.9944 0.0026 89);
+  --destructive: oklch(0.505 0.178 25);
+  --destructive-foreground: oklch(0.9944 0.0026 89);
+  --border: oklch(0.9 0.03 355);
+  --input: oklch(0.9 0.03 355);
+  --ring: oklch(0.5 0.11 155);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans-family);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@utility rise {
+  animation: rise 0.5s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

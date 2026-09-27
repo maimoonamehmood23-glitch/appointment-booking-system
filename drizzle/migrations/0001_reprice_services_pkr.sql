@@ -1,0 +1,1 @@
+update public.services set price_cents = case name when 'Signature Cut & Style' then 350000 when 'Balayage & Toner' then 1500000 when 'Deep Clean Facial' then 600000 when 'Blowout & Finish' then 200000 else price_cents end;
